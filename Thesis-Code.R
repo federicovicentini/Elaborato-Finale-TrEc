@@ -76,6 +76,12 @@ abline(regression2008)
 plot(regression2008)
 
 
+#Adding VXO time series data
+VXO=read.csv("VXOCLS tagliato 1991 2008.csv",sep=";")
+names(VXO)[1]="DATE"
+names(VXO)[2]="VXO"
+
+EU[16]=VXO[2]
 
 
 #Using VXO as the dependent variable
@@ -111,7 +117,7 @@ DGS10=read.csv("DGS10.csv",sep=",")
 names(DGS10)[1]="DATE"
 names(DGS10)[2]="DGS10"
 
-EU[18]=DGS10[2]
+EU[17]=DGS10[2]
 
 
 
@@ -182,8 +188,8 @@ lines(times,newregressionbondVXO2002[["fitted.values"]], col="blue")
 
 #Adding the Federal Funds Rate data
 FEDFUNDS=read.csv("FEDFUNDS.csv")
-EU[19]=FEDFUNDS[2]
-names(EU)[19]="FEDFUNDS"
+EU[18]=FEDFUNDS[2]
+names(EU)[18]="FEDFUNDS"
 
 
 
