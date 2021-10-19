@@ -210,7 +210,11 @@ times=times[-c(144:228)]
 lines(times,regressionfed[["fitted.values"]], col="blue")
 
 
+library(strucchange)
 
+#perform Chow test on the regression with hypothesized structural break in 2003
+sctest(VXO ~ Lag(VXO,1)+UNEMPLOYMENT+DGS10, type = "Chow", data=EU[1:144,])
+#Very good results, points to the presence of a real structural break and a deviation from the Taylor Rule
 
 
 
