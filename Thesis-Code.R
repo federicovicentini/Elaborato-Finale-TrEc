@@ -215,7 +215,10 @@ library(strucchange)
 #perform Chow test on the regression with hypothesized structural break in 2003
 sctest(VXO ~ Lag(VXO,1)+UNEMPLOYMENT+DGS10, type = "Chow", data=EU[1:144,])
 #Very good results, points to the presence of a real structural break and a deviation from the Taylor Rule
-
+plot(EU$DATE,EU$VXO)
+times=EU$DATE
+times=times[-c(228)]
+lines(times, newregressionbondVXO[["fitted.values"]], col="blue")
 
 
 
